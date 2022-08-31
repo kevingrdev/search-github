@@ -30,8 +30,8 @@ export default function Repositories() {
   return (
     <div>
       <Head>
-        <title>Github Search</title>
-        <meta name="description" content="Find the user" />
+        <title>Github Search::Repos</title>
+        <meta name="description" content="Find repos by name" />
         <link rel="icon" href="/github.svg" />
       </Head>
       <Navbar />

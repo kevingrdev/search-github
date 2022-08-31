@@ -26,8 +26,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Github Search</title>
-        <meta name="description" content="Find the user" />
+        <title>Github Search::Users</title>
+        <meta name="description" content="Find users by name" />
         <link rel="icon" href="/github.svg" />
       </Head>
       <Navbar />

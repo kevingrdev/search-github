@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { Link } from '@mui/material'
+import useWindowSize from 'hooks/useWindowSize'
 
 const pages = [
   {
@@ -19,10 +20,14 @@ const ResponsiveAppBar = () => {
     <AppBar
       position="static"
       variant="outlined"
-      sx={{ background: 'transparent', color: 'black' }}
+      sx={{
+        background: 'transparent',
+        color: 'black',
+        justifyContent: 'space-around',
+      }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
           <img src="/github.svg" alt="cat github"></img>
           <Typography
             variant="h6"
@@ -30,7 +35,10 @@ const ResponsiveAppBar = () => {
             component="a"
             href="/"
             sx={{
-              ml: 2,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
               color: 'black',
@@ -39,8 +47,6 @@ const ResponsiveAppBar = () => {
           >
             Search Github
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}></Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <div style={{ display: 'flex' }}>
               {pages.map(({ name = '', link = '' }) => (
