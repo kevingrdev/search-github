@@ -9,7 +9,7 @@ export class RepositoryAdapter {
         id: repository?.id || '',
         name: repository?.full_name || '',
         avatar: repository?.owner?.avatar_url || '',
-        stargazers: repository?.stargazers_count || '',
+        stargazers: repository?.stargazers_count || 0,
         url: repository?.homepage || repository?.html_url || '',
       }
     }

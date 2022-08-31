@@ -7,12 +7,7 @@ import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
 import PropTypes from 'prop-types'
 
-function RepositoryItem({
-  name = '',
-  avatar = '',
-  url = '',
-  stargazers_count,
-}) {
+function RepositoryItem({ name = '', avatar = '', url = '', stargazers = 0 }) {
   return (
     <ListItem alignItems="flex-start">
       <ListItemAvatar>
@@ -28,7 +23,7 @@ function RepositoryItem({
               variant="body2"
               color="text.primary"
             >
-              {stargazers_count} starts
+              {stargazers} starts
             </Typography>
             {' - '}
             <Link href={url} target="_blank">
@@ -45,6 +40,7 @@ RepositoryItem.propTypes = {
   name: PropTypes.string,
   avatar: PropTypes.string,
   url: PropTypes.string,
+  stargazers: PropTypes.number,
 }
 
 export default RepositoryItem

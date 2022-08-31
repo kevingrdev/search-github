@@ -8,7 +8,7 @@ export default function useGithubRepos({ name = '' }) {
   const [load, setLoad] = useState(true)
 
   useEffect(() => {
-    const nameFinal = name === '' ? 'kevingrdev' : name
+    const nameFinal = name === '' ? 'kevingrdev/search-github' : name
     getUserData(nameFinal)
   }, [name])
 
@@ -16,7 +16,7 @@ export default function useGithubRepos({ name = '' }) {
     setLoad(true)
     const repositoryUseCases = new RepositoryUseCases()
     const res = await repositoryUseCases.searchRepoByName(name)
-    
+
     setData(res.data)
     setError(res.error)
     setMessage(res.message)
